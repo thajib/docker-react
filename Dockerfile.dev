@@ -1,10 +1,12 @@
 FROM node:alpine
 
-USER node
+USER root
 
 WORKDIR '/frontend_app'
 
 COPY package.json .
+
+USER root
 
 RUN npm install
 
