@@ -1,0 +1,15 @@
+FROM node:alpine
+
+USER node
+
+WORKDIR '/frontend_app'
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
+CMD ["npm", "run", "start"]
